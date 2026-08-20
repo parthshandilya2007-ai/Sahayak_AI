@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd frontend_template && pnpm install && pnpm run build",
+  "buildCommand": "cd frontend_template && npm install && npm run build",
   "outputDirectory": "frontend_template/.next",
   "rewrites": [
     {
