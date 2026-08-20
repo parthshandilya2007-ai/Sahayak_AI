@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Dashboard | AI for Public Good",
-  description: "Voice-first AI solutions for underserved communities",
+  title: "Voice Assistant | Sahayak AI",
+  description: "Voice-first AI assistant for agriculture, government schemes, weather, and healthcare in India",
 }
 
 export default function DashboardLayout({
@@ -11,8 +11,9 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50">
+    <div className="min-h-screen bg-zinc-950 text-zinc-100">
       {children}
     </div>
   )
 }
+

@@ -11,25 +11,12 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: "Liquid Metal Buttons | Premium UI Components",
+  title: "Sahayak AI | Voice & Multilingual Assistant for Public Good",
   description:
-    "A collection of premium button components featuring animated liquid metal borders powered by Paper Shaders.",
-  generator: "v0.app",
+    "Empowering rural and underserved communities across India with instant voice-first AI assistance in 9+ regional languages for agriculture, government schemes, market prices, weather, and health.",
+  generator: "Sahayak AI",
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
+    icon: "/icon.svg",
     apple: "/apple-icon.png",
   },
 }
@@ -47,10 +34,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`${manrope.variable} font-sans antialiased bg-zinc-950 text-zinc-100`}>
+      <body className={`${manrope.variable} font-sans antialiased bg-zinc-950 text-zinc-100 selection:bg-green-500 selection:text-zinc-950`}>
         <LenisProvider>{children}</LenisProvider>
         <Analytics />
       </body>
     </html>
   )
 }
+

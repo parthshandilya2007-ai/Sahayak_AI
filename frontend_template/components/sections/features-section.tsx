@@ -1,23 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Zap, BarChart3, Layers, ArrowRight, Command } from "lucide-react"
+import { Mic, Globe, Search, Landmark, Sprout, ArrowRight, ShieldCheck, Zap } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-
-const integrationLogos = [
-  { name: "Tool 1" },
-  { name: "Tool 2" },
-  { name: "Tool 3" },
-  { name: "Tool 4" },
-  { name: "Tool 5" },
-  { name: "Tool 6" },
-  { name: "Tool 7" },
-  { name: "Tool 8" },
-]
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="px-6 py-24">
+    <section id="features" className="px-6 py-24 bg-zinc-950">
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -25,259 +14,118 @@ export function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">Features</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-zinc-100 mb-4">
-            Everything you need to succeed
+          <p className="text-sm font-semibold text-green-500 uppercase tracking-wider mb-3">AI for Public Good</p>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-zinc-100 mb-4">
+            Designed for Accessibility & Empowerment
           </h2>
-          <p className="text-zinc-500 max-w-xl mx-auto text-balance">
-            Powerful features designed to help you ship better products, faster.
+          <p className="text-zinc-400 max-w-xl mx-auto text-balance">
+            Sahayak AI breaks language, literacy, and technology barriers across rural and urban India.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
-          {/* Card 1 - Analytics (wider - 3 cols) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Feature 1: Voice & Multilingual */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="md:col-span-3"
           >
-            <Card className="group h-full overflow-hidden border-zinc-800/50 bg-zinc-900/50 hover:border-zinc-700/50 transition-all duration-300 rounded-2xl">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <motion.div
-                    className="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center"
-                    whileHover={{ rotate: [0, -10, 10, 0] }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <BarChart3 className="w-5 h-5 text-zinc-400 group-hover:text-zinc-200 transition-colors" />
-                  </motion.div>
-                  <p className="font-heading font-semibold text-zinc-100">Real-time Dashboard</p>
+            <Card className="group h-full overflow-hidden border-zinc-800/80 bg-zinc-900/60 hover:border-green-800/60 transition-all duration-300 rounded-3xl p-2">
+              <CardContent className="p-6 flex flex-col h-full">
+                <div className="w-12 h-12 rounded-2xl bg-green-950/80 border border-green-800/50 flex items-center justify-center mb-4">
+                  <Mic className="w-6 h-6 text-green-400" />
                 </div>
-                <p className="text-zinc-500 text-sm mb-5">
-                  Track every metric that matters with customizable dashboards.
+                <h3 className="font-display text-xl font-bold text-zinc-100 mb-2">
+                  Voice-First & 9+ Indian Languages
+                </h3>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  Speak naturally in Hindi, English, Bengali, Marathi, Tamil, Telugu, Kannada, Gujarati, or Punjabi. Integrated text-to-speech reads answers aloud for hands-free convenience.
                 </p>
-                <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-4 overflow-hidden">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <motion.div
-                        className="flex items-center gap-1.5"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.5 }}
-                      >
-                        <div className="w-2 h-2 rounded-full bg-zinc-400" />
-                        <span className="text-xs text-zinc-500">Users</span>
-                      </motion.div>
-                      <motion.div
-                        className="flex items-center gap-1.5"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.6 }}
-                      >
-                        <div className="w-2 h-2 rounded-full bg-zinc-600" />
-                        <span className="text-xs text-zinc-500">Revenue</span>
-                      </motion.div>
-                    </div>
-                  </div>
-                  {/* Animated metrics row */}
-                  <div className="grid grid-cols-3 gap-3 mb-4">
-                    {[
-                      { label: "Total Users", value: "12.4K", change: "+12%" },
-                      { label: "Revenue", value: "$48.2K", change: "+8%" },
-                      { label: "Conversion", value: "3.2%", change: "+2%" },
-                    ].map((metric, i) => (
-                      <motion.div
-                        key={metric.label}
-                        className="bg-zinc-900/50 rounded-lg p-2.5"
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 + i * 0.1 }}
-                      >
-                        <p className="text-zinc-500 text-xs mb-1">{metric.label}</p>
-                        <div className="flex items-baseline gap-1.5">
-                          <span className="text-zinc-100 font-semibold text-sm">{metric.value}</span>
-                          <motion.span
-                            className="text-zinc-400 text-xs"
-                            animate={{ opacity: [0.5, 1, 0.5] }}
-                            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                          >
-                            {metric.change}
-                          </motion.span>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                  {/* Animated bar chart */}
-                  <div className="flex items-end gap-1.5 h-16">
-                    {[35, 55, 40, 75, 50, 85, 60, 70, 45, 90, 65, 80].map((h, i) => (
-                      <motion.div
-                        key={i}
-                        className="flex-1 bg-gradient-to-t from-zinc-700 to-zinc-500 rounded-sm origin-bottom"
-                        initial={{ scaleY: 0 }}
-                        whileInView={{ scaleY: h / 100 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.5 + i * 0.04, ease: "easeOut" }}
-                        whileHover={{ scaleY: 1, transition: { duration: 0.2 } }}
-                      />
-                    ))}
-                  </div>
-                  {/* Animated line underneath */}
-                  <motion.div
-                    className="h-px bg-gradient-to-r from-transparent via-zinc-600 to-transparent mt-3"
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.8 }}
-                  />
+                <div className="mt-auto flex flex-wrap gap-2 pt-2 border-t border-zinc-800/60">
+                  {["हिंदी", "English", "বাংলা", "मराठी", "தமிழ்", "తెలుగు"].map((lang) => (
+                    <span key={lang} className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-zinc-800/80 text-zinc-300">
+                      {lang}
+                    </span>
+                  ))}
                 </div>
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* Card 2 - Performance (narrower - 2 cols) */}
+          {/* Feature 2: Real-time Mandi Prices & Web Search */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="md:col-span-2"
           >
-            <Card className="group h-full overflow-hidden border-zinc-800/50 bg-zinc-900/50 hover:border-zinc-700/50 transition-all duration-300 rounded-2xl">
+            <Card className="group h-full overflow-hidden border-zinc-800/80 bg-zinc-900/60 hover:border-emerald-800/60 transition-all duration-300 rounded-3xl p-2">
               <CardContent className="p-6 flex flex-col h-full">
-                <div className="flex items-center gap-3 mb-3">
-                  <motion.div
-                    className="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center"
-                    animate={{ scale: [1, 1.1, 1] }}
-                    transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-                  >
-                    <Zap className="w-5 h-5 text-zinc-400 group-hover:text-zinc-200 transition-colors" />
-                  </motion.div>
-                  <p className="font-heading font-semibold text-zinc-100">Blazing Fast</p>
+                <div className="w-12 h-12 rounded-2xl bg-emerald-950/80 border border-emerald-800/50 flex items-center justify-center mb-4">
+                  <Search className="w-6 h-6 text-emerald-400" />
                 </div>
-                <p className="text-zinc-500 text-sm mb-5">Optimized for speed at any scale.</p>
-                <div className="mt-auto">
-                  <div className="flex items-baseline gap-2 mb-3">
-                    <motion.span
-                      className="text-4xl font-display font-bold text-zinc-100"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                    >
-                      99.9%
-                    </motion.span>
-                    <span className="text-zinc-500 text-sm">uptime</span>
-                  </div>
-                  <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-gradient-to-r from-zinc-500 to-zinc-300 rounded-full"
-                      initial={{ width: "0%" }}
-                      whileInView={{ width: "99.9%" }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-                    />
-                  </div>
+                <h3 className="font-display text-xl font-bold text-zinc-100 mb-2">
+                  Real-time Mandi Prices & Weather (Firecrawl)
+                </h3>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  Powered by web search tools, Sahayak AI fetches live market prices for crops, weather alerts, and news directly when you ask for today's updates.
+                </p>
+                <div className="mt-auto flex items-center gap-2 pt-2 border-t border-zinc-800/60 text-xs text-emerald-400 font-medium">
+                  <Sprout className="w-4 h-4" /> Live Market & Agricultural Intelligence
                 </div>
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* Card 3 - Keyboard shortcuts (narrower - 2 cols) */}
+          {/* Feature 3: Government Scheme Navigator */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="md:col-span-2"
           >
-            <Card className="group h-full overflow-hidden border-zinc-800/50 bg-zinc-900/50 hover:border-zinc-700/50 transition-all duration-300 rounded-2xl">
+            <Card className="group h-full overflow-hidden border-zinc-800/80 bg-zinc-900/60 hover:border-teal-800/60 transition-all duration-300 rounded-3xl p-2">
               <CardContent className="p-6 flex flex-col h-full">
-                <div className="flex items-center gap-3 mb-3">
-                  <motion.div
-                    className="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center"
-                    whileHover={{ y: -2 }}
-                  >
-                    <Command className="w-5 h-5 text-zinc-400 group-hover:text-zinc-200 transition-colors" />
-                  </motion.div>
-                  <p className="font-heading font-semibold text-zinc-100">Keyboard First</p>
+                <div className="w-12 h-12 rounded-2xl bg-teal-950/80 border border-teal-800/50 flex items-center justify-center mb-4">
+                  <Landmark className="w-6 h-6 text-teal-400" />
                 </div>
-                <p className="text-zinc-500 text-sm mb-5">Every action is just a keystroke away.</p>
-                <div className="flex justify-center gap-2 mt-auto">
-                  {["⌘", "K"].map((key, i) => (
-                    <motion.div
-                      key={key}
-                      className="flex items-center justify-center w-12 h-12 rounded-xl bg-zinc-800/80 border border-zinc-700/50 shadow-lg"
-                      initial={{ y: 0 }}
-                      animate={{ y: [0, -4, 0] }}
-                      transition={{
-                        duration: 1.5,
-                        delay: i * 0.15,
-                        repeat: Number.POSITIVE_INFINITY,
-                        repeatDelay: 2,
-                      }}
-                      whileHover={{ scale: 1.1, y: -4 }}
-                    >
-                      <span className="text-zinc-300 font-mono text-lg">{key}</span>
-                    </motion.div>
-                  ))}
+                <h3 className="font-display text-xl font-bold text-zinc-100 mb-2">
+                  Government Scheme Guidance
+                </h3>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  Get practical, simple guidance on central and state government schemes including PM-Kisan, Ayushman Bharat, KCC loans, and housing subsidies.
+                </p>
+                <div className="mt-auto flex items-center gap-2 pt-2 border-t border-zinc-800/60 text-xs text-teal-400 font-medium">
+                  <ShieldCheck className="w-4 h-4" /> Simple Step-by-Step Instructions
                 </div>
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* Card 4 - Integrations (wider - 3 cols) */}
+          {/* Feature 4: Ultra-fast Streaming & Low Bandwidth */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="md:col-span-3"
           >
-            <Card className="group h-full overflow-hidden border-zinc-800/50 bg-zinc-900/50 hover:border-zinc-700/50 transition-all duration-300 rounded-2xl">
+            <Card className="group h-full overflow-hidden border-zinc-800/80 bg-zinc-900/60 hover:border-green-800/60 transition-all duration-300 rounded-3xl p-2">
               <CardContent className="p-6 flex flex-col h-full">
-                <div className="flex items-center gap-3 mb-3">
-                  <motion.div
-                    className="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center"
-                    whileHover={{ rotate: 180 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <Layers className="w-5 h-5 text-zinc-400 group-hover:text-zinc-200 transition-colors" />
-                  </motion.div>
-                  <p className="font-heading font-semibold text-zinc-100">100+ Integrations</p>
+                <div className="w-12 h-12 rounded-2xl bg-green-950/80 border border-green-800/50 flex items-center justify-center mb-4">
+                  <Zap className="w-6 h-6 text-green-400" />
                 </div>
-                <p className="text-zinc-500 text-sm mb-5">Connect with tools you already use daily.</p>
-                <div className="grid grid-cols-8 gap-2 mt-auto">
-                  {integrationLogos.map((logo, i) => (
-                    <motion.div
-                      key={logo.name}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: 0.3 + i * 0.05 }}
-                      whileHover={{ scale: 1.15, y: -2 }}
-                      className="aspect-square rounded-lg border border-zinc-800 bg-zinc-800/50 flex items-center justify-center cursor-pointer"
-                    >
-                      <div className="w-5 h-5 rounded bg-zinc-700" />
-                    </motion.div>
-                  ))}
+                <h3 className="font-display text-xl font-bold text-zinc-100 mb-2">
+                  Fast Streaming for Low Bandwidth
+                </h3>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  Optimized server streaming guarantees zero waiting time even on slow mobile networks in remote regions. Words stream instantly as they generate.
+                </p>
+                <div className="mt-auto flex items-center gap-2 pt-2 border-t border-zinc-800/60 text-xs text-green-400 font-medium">
+                  <Zap className="w-4 h-4" /> 2G/3G Network Optimized Response
                 </div>
-                <motion.button
-                  whileHover={{ x: 6 }}
-                  className="mt-4 flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
-                >
-                  View all integrations <ArrowRight className="w-4 h-4" />
-                </motion.button>
               </CardContent>
             </Card>
           </motion.div>
@@ -286,3 +134,4 @@ export function FeaturesSection() {
     </section>
   )
 }
+
