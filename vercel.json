@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd frontend_template && pnpm install && pnpm run build",
+  "outputDirectory": "frontend_template/.next",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    }
+  ]
+}
