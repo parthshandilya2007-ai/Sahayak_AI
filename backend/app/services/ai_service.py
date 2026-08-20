@@ -6,11 +6,17 @@ from firecrawl import FirecrawlApp
 
 load_dotenv()
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-firecrawl_app = FirecrawlApp(api_key=os.getenv("FIRECRAWL_API_KEY"))
+gemini_key = os.getenv("GEMINI_API_KEY")
+if gemini_key:
+    genai.configure(api_key=gemini_key)
+
+firecrawl_key = os.getenv("FIRECRAWL_API_KEY")
+firecrawl_app = FirecrawlApp(api_key=firecrawl_key) if firecrawl_key else None
 
 def fetch_real_time_info(search_query: str) -> str:
     """ONLY use for current prices, news, or latest updates."""
+    if not firecrawl_app:
+        return "Live search is unavailable (FIRECRAWL_API_KEY not configured)."
     try:
         print(f"--> [Firecrawl] Searching web for: {search_query}")
         result = firecrawl_app.search(search_query, params={"limit": 1})
@@ -23,8 +29,9 @@ def fetch_real_time_info(search_query: str) -> str:
     except Exception as e:
         return f"Could not fetch info: {str(e)}"
 
+# Use valid Gemini 1.5 Flash model
 model = genai.GenerativeModel(
-    model_name="gemini-3.5-flash",
+    model_name="gemini-1.5-flash",
     tools=[fetch_real_time_info],
     system_instruction=(
         "You are 'Sahayak AI', an assistant for underserved communities in India. "
@@ -37,7 +44,7 @@ model = genai.GenerativeModel(
 def get_ai_response_stream(user_query: str):
     try:
         if not os.getenv("GEMINI_API_KEY") or os.getenv("GEMINI_API_KEY") == "your_gemini_api_key_here":
-            yield "Error: GEMINI_API_KEY is missing in your .env file."
+            yield "Error: GEMINI_API_KEY is missing in your Render environment variables."
             return
             
         # 1. Instantly send a "Thinking" message so the frontend doesn't freeze!
