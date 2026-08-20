@@ -1,5 +1,5 @@
 services:
-  # Python FastAPI Backend Web Service (Free Tier)
+  # Python FastAPI Backend Web Service (Free Plan)
   - type: web
     name: sahayak-ai-backend
     env: python
@@ -11,13 +11,13 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.0
 
-  # Next.js Frontend Web Service (Free Tier)
+  # Next.js Frontend Web Service (Free Plan)
   - type: web
     name: sahayak-ai-frontend
     env: node
     plan: free
     rootDir: frontend_template
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --legacy-peer-deps && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_VERSION
