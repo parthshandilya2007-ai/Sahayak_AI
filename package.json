@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "packageManager": "npm@10.8.2",
+  "dependencies": {
+    "next": "16.0.10"
+  },
   "scripts": {
     "build": "cd frontend_template && npm install --legacy-peer-deps && npm run build"
   }
