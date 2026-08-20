@@ -1,6 +1,7 @@
 {
-  "installCommand": "cd frontend_template && npm install --legacy-peer-deps",
-  "buildCommand": "cd frontend_template && npm run build",
+  "framework": "nextjs",
+  "installCommand": "echo 'Using npm'",
+  "buildCommand": "cd frontend_template && npm install --legacy-peer-deps && npm run build",
   "outputDirectory": "frontend_template/.next",
   "rewrites": [
     {
