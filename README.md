@@ -293,7 +293,7 @@ The generated response is then sent back to the user interface.
 
 # 👥 Contributors
 
-This project was developed collaboratively by the **Sahayak AI Team**.
+This project was developed collaboratively by the ** Team Codelith **.
 
 | Name | Contribution |
 |------|-------------|
