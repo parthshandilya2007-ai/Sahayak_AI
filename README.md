@@ -72,7 +72,6 @@ The platform allows users to interact with an intelligent assistant through a mo
 ## Deployment
 
 - Render
-- Vercel
 
 ## Version Control
 
@@ -389,10 +388,6 @@ You can add an open-source license such as the **MIT License** in the future.
 
 Built with ❤️ using:
 
-**Python • FastAPI • Next.js • React • TypeScript • Google Gemini • Firecrawl • Render • Vercel**
+**Python • FastAPI • Next.js • React • TypeScript • Google Gemini • Firecrawl • Render**
 
----
 
-## 🔗 Repository
-
-https://github.com/parthshandilya2007-ai/Sahayak_AI
