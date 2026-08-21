@@ -303,9 +303,9 @@ This project was developed collaboratively by the ** Team Codelith **.
 
 | Name | Contribution |
 |------|-------------|
-| **Parth Shandilya** | Project development, frontend development, deployment, and overall project contribution |
+| **Parth Shandilya** | Team Lead, Project development, frontend development, deployment, and overall project contribution |
 | **Mohit Bajiya** | Backend development, API integration, AI integration, and deployment support |
-| **Nishtha** | Project development and contribution |
+| **Nishtha** | Tester and Supporting |
 
 ---
 
