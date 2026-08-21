@@ -6,6 +6,12 @@ The project combines a **Next.js frontend**, **Python FastAPI backend**, and AI-
 
 ---
 
+### 🌐 Project Prototype
+
+🔗 **Live Demo / Prototype:** https://sahayak-ai-frontend.onrender.com
+
+---
+
 ## 🚀 Project Overview
 
 Sahayak AI is a full-stack AI application built with separate frontend and backend services.
